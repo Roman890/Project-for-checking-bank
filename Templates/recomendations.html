@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="p-3 bg-danger">
+    <div class="well text-center">
+        <h1 style="color: white">Рекомендации по проведенной оценке информационной безопасности ДБО банка {{banks.name}}</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+            <div class="p-3 float-right">
+				<a href="/back" class="btn btn-danger">Вернуться на главную</a>
+			</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="p-3 col-md-12">
+            <table class="table table-hover table-bordered">
+                <thead class="thead-light">
+                <tr>
+                    <th>Группа вопросов</th>
+                    <th>Рекомендации</th>
+                </tr>
+                </thead>
+                {% for i,j in data_for_table.items()  %}
+                <tr>
+                    <td width="20%">{{i}}</td>
+                    <td width="80%"><p>{{j|safe}}</p></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+<div class="p-5 bg-dark"></div>
+
+
+{% endblock %}

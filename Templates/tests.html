@@ -1,0 +1,1078 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="p-3 bg-danger">
+    <div class="well text-center">
+        <h1 style="color: white">Проведение оценки соответствия требованиям информационной безопасности согласно Положению ЦБ РФ 382-П</h1>
+    </div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="section-title text-center wow zoomIn">
+                <br/>
+				<h3>Необходимо ответить на вопросы из каждого блока для опредеделения уровня ИБ банка</h3>
+			</div>
+		</div>
+		<div class="col md-12">
+			<div class="p-3 float-right">
+				<a href="/back" class="btn btn-danger">Вернуться на главную</a>
+				<button type="button" class="btn btn-danger" data-toggle="modal"
+                    data-target="#mymodal_1">Справка</button>
+			</div>
+			<div id="mymodal_1" class="modal fade bd-example-modal-lg" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+							<div class="p-3">
+								<table class="table table-bordered">
+									<thead class="thead-light">
+									<tr>
+										<th>Варианты</th>
+										<th>Описание</th>
+									</tr>
+									</thead>
+									<tr>
+										<td colspan="2"><b>Требования категории проверки 1</b></td>
+									</tr>
+									<tr>
+										<td><i>Не выполняется</i></td>
+										<td width="70%">Оценка выставляется, в случае если порядок применения организационных мер защиты информации или использования технических средств защиты информации не определен во внутренних документах оператора по переводу денежных средств, оператора платежных систем, оператора услуг платежной инфраструктуры</td>
+									</tr>
+						    		<tr>
+										<td><i>Определено в док-тах, но не выполняется</i></td>
+										<td width="70%">Оценка выставляется, в случае если порядок применения организационных мер защиты информации или использования технических средств защиты информации определен во внутренних документах оператора по переводу денежных средств, оператора платежных систем, оператора услуг платежной инфраструктуры, но соответствующие организационные меры защиты информации не применяются, или технические средства защиты информации не используются</td>
+									</tr>
+						    		<tr>
+										<td><i>Определено в док-тах, выполняется частично</i></td>
+										<td width="70%">Оценка выставляется, в случае если порядок применения организационных мер защиты информации или использования технических средств защиты информации определен во внутренних документах оператора по переводу денежных средств, оператора платежных систем, оператора услуг платежной инфраструктуры, но применение соответствующих организационных мер защиты информации или использование технических средств защиты информации осуществляется не в полном соответствии с указанным порядком;</td>
+									</tr>
+						    		<tr>
+										<td><i>Определено в док-тах, выполняется почти полностью</i></td>
+										<td width="70%">Оценка выставляется, в случае если порядок применения организационных мер защиты информации или использования технических средств защиты информации определен во внутренних документах оператора по переводу денежных средств, оператора платежных систем, оператора услуг платежной инфраструктуры, но применение соответствующих организационных мер защиты информации или использование технических средств защиты информации осуществляется почти в полном соответствии с указанным порядком</td>
+									</tr>
+						    		<tr>
+										<td><i>Выполняется полностью</i></td>
+										<td width="70%">Оценка выставляется, в случае если порядок применения организационных мер защиты информации или использования технических средств защиты информации определен во внутренних документах оператора по переводу денежных средств, оператора платежных систем, оператора услуг платежной инфраструктуры, и применение соответствующих организационных мер защиты информации и использование технических средств защиты информации осуществляется в полном соответствии с указанным порядком</td>
+									</tr>
+						    		<tr>
+										<td colspan="2"><b>Требования категории проверки 2</b></td>
+									</tr>
+									<tr>
+										<td><i>Документ отсутствует</i></td>
+										<td width="70%">Оценка выставляется, в случае если документ отсутствует</td>
+									</tr>
+						    		<tr>
+										<td><i>Документ в наличии</i></td>
+										<td width="70%">Оценка выставляется, в случае если документ имеется в наличии</td>
+									</tr>
+						    		<tr>
+										<td colspan="2"><b>Требования категории проверки 3</b></td>
+									</tr>
+									<tr>
+										<td><i>Не выполняется</i></td>
+										<td width="70%">Оценка выставляется, в случае если деятельность не выполняется</td>
+									</tr>
+						    		<tr>
+										<td><i>Выполняется частично</i></td>
+										<td width="70%">Оценка выставляется, в случае если деятельность выполняется частично</td>
+									</tr>
+						    		<tr>
+										<td><i>Выполняется полностью</i></td>
+										<td width="70%">Оценка выставляется, в случае если деятельность выполняется полностью</td>
+									</tr>
+								</table>
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+
+	</div>
+
+    <div id="accordion" >
+		<div class="card">
+			<div class="card-header" id="headingOne" style="background-color: #fde3e5">
+				<h3>
+                    <button class="btn shadow-none" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+						<h5>Защита информации при назначении и распределении ролей</h5>
+                    </button>
+				</h3>
+			</div>
+
+			<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+				<div class="p-3 ">
+					<table class="table table-hover table-bordered">
+						<thead class="thead-light">
+							<tr>
+								<th>Вопрос</th>
+								<th>Варианты ответа</th>
+							</tr>
+						</thead>
+						{% for question in questions %}
+							{% if question.group_id == 1 %}
+							<tr>
+								<td width="70%"><i>{{question.name|safe}}</i></td>
+								<td>
+									<div class="form-group">
+                                    	<select class="form-control" name="answer{{question.id}}">
+                                       		<option value="-1" selected>Н/О</option>
+                                       		<option value="0">Не выполняется</option>
+                                       		<option value="0.25">Определено в док-тах, но не выполняется</option>
+											<option value="0.5">Определено в док-тах, выполняется частично</option>
+											<option value="0.75">Определено в док-тах, выполняется почти полностью</option>
+											<option value="1">Выполняется полностью</option>
+                                    	</select>
+                                	</div>
+                            	</td>
+							</tr>
+							{% endif %}
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header" id="headingTwo">
+				<h5 class="mb-0">
+                <button class="btn shadow-none" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <h5>Защита информации на этапах жизненного цикла</h5>
+                </button>
+            </h5>
+			</div>
+			<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+				<div class="p-3 ">
+					<table class="table table-hover table-bordered">
+						<thead class="thead-light">
+							<tr>
+								<th>Вопрос</th>
+								<th>Варианты ответа</th>
+							</tr>
+						</thead>
+						{% for question in questions %}
+							{% if question.group_id == 2 %}
+							<tr>
+								<td width="70%"><i>{{question.name|safe}}</i></td>
+								<td>
+									{% if question.id in [10,12,13,14,17,18,19,20,21,22,23,24,25,26] %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Не выполняется</option>
+                                        		<option value="0.25">Определено в док-тах, но не выполняется</option>
+												<option value="0.5">Определено в док-тах, выполняется частично</option>
+												<option value="0.75">Определено в док-тах, выполняется почти полностью</option>
+												<option value="1">Выполняется полностью</option>
+                                    		</select>
+                                		</div>
+                                    {% elif question.id in [11] %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Документ отсутствует</option>
+                                        		<option value="1">Документ в наличии</option>
+                                    		</select>
+                                		</div>
+                                    {% else %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Не выполняется</option>
+												<option value="0.5">Выполняется частично</option>
+												<option value="1">Выполняется полностью</option>
+                                    		</select>
+                                		</div>
+                                    {% endif %}
+                            	</td>
+							</tr>
+							{% endif %}
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header" id="headingThree" style="background-color: #fde3e5">
+				<h5 class="mb-0">
+                <button class="btn shadow-none" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <h5>Защита информации при доступе к объектам информационной инфраструктуры</h5>
+                </button>
+                </h5>
+			</div>
+			<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+				<div class="p-3 ">
+					<table class="table table-hover table-bordered">
+						<thead class="thead-light">
+							<tr>
+								<th>Вопрос</th>
+								<th>Варианты ответа</th>
+							</tr>
+						</thead>
+						{% for question in questions %}
+							{% if question.group_id == 3 %}
+							<tr>
+								<td width="70%"><i>{{question.name|safe}}</i></td>
+								<td>
+									{% if question.id in [27,29,30,32,33,34,35,36,37,38,42,43,44,48,49,50] %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Не выполняется</option>
+                                        		<option value="0.25">Определено в док-тах, но не выполняется</option>
+												<option value="0.5">Определено в док-тах, выполняется частично</option>
+												<option value="0.75">Определено в док-тах, выполняется почти полностью</option>
+												<option value="1">Выполняется полностью</option>
+                                    		</select>
+                                		</div>
+                                    {% elif question.id in [31,40,41] %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Документ отсутствует</option>
+                                        		<option value="1">Документ в наличии</option>
+                                    		</select>
+                                		</div>
+                                    {% else %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Не выполняется</option>
+												<option value="0.5">Выполняется частично</option>
+												<option value="1">Выполняется полностью</option>
+                                    		</select>
+                                		</div>
+                                    {% endif %}
+                            	</td>
+							</tr>
+							{% endif %}
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header" id="headingFour" >
+				<h5 class="mb-0">
+                <button class="btn shadow-none" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                <h5>Защита информации от вредоносного кода</h5>
+                </button>
+                </h5>
+			</div>
+			<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+				<div class="p-3 ">
+					<table class="table table-hover table-bordered">
+						<thead class="thead-light">
+							<tr>
+								<th>Вопрос</th>
+								<th>Варианты ответа</th>
+							</tr>
+						</thead>
+						{% for question in questions %}
+							{% if question.group_id == 4 %}
+							<tr>
+								<td width="70%"><i>{{question.name|safe}}</i></td>
+								<td>
+									{% if question.id in [51,58,59,60] %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Не выполняется</option>
+                                        		<option value="0.25">Определено в док-тах, но не выполняется</option>
+												<option value="0.5">Определено в док-тах, выполняется частично</option>
+												<option value="0.75">Определено в док-тах, выполняется почти полностью</option>
+												<option value="1">Выполняется полностью</option>
+                                    		</select>
+                                		</div>
+                                    {% elif question.id in [54] %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Документ отсутствует</option>
+                                        		<option value="1">Документ в наличии</option>
+                                    		</select>
+                                		</div>
+                                    {% else %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Не выполняется</option>
+												<option value="0.5">Выполняется частично</option>
+												<option value="1">Выполняется полностью</option>
+                                    		</select>
+                                		</div>
+                                    {% endif %}
+                            	</td>
+							</tr>
+							{% endif %}
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header" id="headingFive" style="background-color: #fde3e5">
+				<h5 class="mb-0">
+                <button class="btn shadow-none" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                <h5>Защита информации при использовании Интернет</h5>
+                </button>
+                </h5>
+			</div>
+			<div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+				<div class="p-3 ">
+					<table class="table table-hover table-bordered">
+						<thead class="thead-light">
+							<tr>
+								<th>Вопрос</th>
+								<th>Варианты ответа</th>
+							</tr>
+						</thead>
+						{% for question in questions %}
+							{% if question.group_id == 5 %}
+							<tr>
+								<td width="70%"><i>{{question.name|safe}}</i></td>
+								<td>
+									{% if question.id in [63,64,65,66,67,68,72,74,75,76] %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Не выполняется</option>
+                                        		<option value="0.25">Определено в док-тах, но не выполняется</option>
+												<option value="0.5">Определено в док-тах, выполняется частично</option>
+												<option value="0.75">Определено в док-тах, выполняется почти полностью</option>
+												<option value="1">Выполняется полностью</option>
+                                    		</select>
+                                		</div>
+                                    {% elif question.id in [71] %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Документ отсутствует</option>
+                                        		<option value="1">Документ в наличии</option>
+                                    		</select>
+                                		</div>
+                                    {% else %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Не выполняется</option>
+												<option value="0.5">Выполняется частично</option>
+												<option value="1">Выполняется полностью</option>
+                                    		</select>
+                                		</div>
+                                    {% endif %}
+                            	</td>
+							</tr>
+							{% endif %}
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header" id="headingSix" >
+				<h5 class="mb-0">
+                <button class="btn shadow-none" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                <h5>Защита информации с использованием СКЗИ</h5>
+                </button>
+                </h5>
+			</div>
+			<div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+				<div class="p-3 ">
+					<table class="table table-hover table-bordered">
+						<thead class="thead-light">
+							<tr>
+								<th>Вопрос</th>
+								<th>Варианты ответа</th>
+							</tr>
+						</thead>
+						{% for question in questions %}
+							{% if question.group_id == 6 %}
+							<tr>
+								<td width="70%"><i>{{question.name|safe}}</i></td>
+								<td>
+									{% if question.id in [84,85,86,87,88,89] %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Не выполняется</option>
+                                        		<option value="0.25">Определено в док-тах, но не выполняется</option>
+												<option value="0.5">Определено в док-тах, выполняется частично</option>
+												<option value="0.75">Определено в док-тах, выполняется почти полностью</option>
+												<option value="1">Выполняется полностью</option>
+                                    		</select>
+                                		</div>
+                                    {% elif question.id in [90,91] %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Документ отсутствует</option>
+                                        		<option value="1">Документ в наличии</option>
+                                    		</select>
+                                		</div>
+                                    {% else %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Не выполняется</option>
+												<option value="0.5">Выполняется частично</option>
+												<option value="1">Выполняется полностью</option>
+                                    		</select>
+                                		</div>
+                                    {% endif %}
+                            	</td>
+							</tr>
+							{% endif %}
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header" id="headingSeven" style="background-color: #fde3e5">
+				<h5 class="mb-0">
+                <button class="btn shadow-none" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                <h5>Технологические меры защиты информации</h5>
+                </button>
+                </h5>
+			</div>
+			<div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
+				<div class="p-3 ">
+					<table class="table table-hover table-bordered">
+						<thead class="thead-light">
+							<tr>
+								<th>Вопрос</th>
+								<th>Варианты ответа</th>
+							</tr>
+						</thead>
+						{% for question in questions %}
+							{% if question.group_id == 7 %}
+							<tr>
+								<td width="70%"><i>{{question.name|safe}}</i></td>
+								<td>
+									{% if question.id in [92,93,96,97,98,99,100,101,102,103,104] %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Не выполняется</option>
+                                        		<option value="0.25">Определено в док-тах, но не выполняется</option>
+												<option value="0.5">Определено в док-тах, выполняется частично</option>
+												<option value="0.75">Определено в док-тах, выполняется почти полностью</option>
+												<option value="1">Выполняется полностью</option>
+                                    		</select>
+                                		</div>
+                                    {% else %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Не выполняется</option>
+												<option value="0.5">Выполняется частично</option>
+												<option value="1">Выполняется полностью</option>
+                                    		</select>
+                                		</div>
+                                    {% endif %}
+                            	</td>
+							</tr>
+							{% endif %}
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header" id="headingEight">
+				<h5 class="mb-0">
+                <button class="btn shadow-none" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+					<h5>Требования к Службе ИБ банка</h5>
+                </button>
+                </h5>
+			</div>
+			<div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordion">
+				<div class="p-3 ">
+					<table class="table table-hover table-bordered">
+						<thead class="thead-light">
+							<tr>
+								<th>Вопрос</th>
+								<th>Варианты ответа</th>
+							</tr>
+						</thead>
+						{% for question in questions %}
+							{% if question.group_id == 8 %}
+							<tr>
+								<td width="70%"><i>{{question.name|safe}}</i></td>
+								<td>
+									{% if question.id in [110] %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Не выполняется</option>
+                                        		<option value="0.25">Определено в док-тах, но не выполняется</option>
+												<option value="0.5">Определено в док-тах, выполняется частично</option>
+												<option value="0.75">Определено в док-тах, выполняется почти полностью</option>
+												<option value="1">Выполняется полностью</option>
+                                    		</select>
+                                		</div>
+                                    {% else %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Не выполняется</option>
+												<option value="0.5">Выполняется частично</option>
+												<option value="1">Выполняется полностью</option>
+                                    		</select>
+                                		</div>
+                                    {% endif %}
+                            	</td>
+							</tr>
+							{% endif %}
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header" id="headingNine" style="background-color: #fde3e5">
+				<h5 class="mb-0">
+                <button class="btn shadow-none" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+					<h5>Повышение осведомленности в области ИБ</h5>
+                </button>
+                </h5>
+			</div>
+			<div id="collapseNine" class="collapse" aria-labelledby="headingEight" data-parent="#accordion">
+				<div class="p-3 ">
+					<table class="table table-hover table-bordered">
+						<thead class="thead-light">
+							<tr>
+								<th>Вопрос</th>
+								<th>Варианты ответа</th>
+							</tr>
+						</thead>
+						{% for question in questions %}
+							{% if question.group_id == 9 %}
+							<tr>
+								<td width="70%"><i>{{question.name|safe}}</i></td>
+								<td>
+									{% if question.id in [116,117,118] %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Не выполняется</option>
+                                        		<option value="0.25">Определено в док-тах, но не выполняется</option>
+												<option value="0.5">Определено в док-тах, выполняется частично</option>
+												<option value="0.75">Определено в док-тах, выполняется почти полностью</option>
+												<option value="1">Выполняется полностью</option>
+                                    		</select>
+                                		</div>
+                                    {% else %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Не выполняется</option>
+												<option value="0.5">Выполняется частично</option>
+												<option value="1">Выполняется полностью</option>
+                                    		</select>
+                                		</div>
+                                    {% endif %}
+                            	</td>
+							</tr>
+							{% endif %}
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header" id="headingTen">
+				<h5 class="mb-0">
+                <button class="btn shadow-none" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+					<h5>Выявление и реагирование на инциденты</h5>
+                </button>
+                </h5>
+			</div>
+			<div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordion">
+				<div class="p-3 ">
+					<table class="table table-hover table-bordered">
+						<thead class="thead-light">
+							<tr>
+								<th>Вопрос</th>
+								<th>Варианты ответа</th>
+							</tr>
+						</thead>
+						{% for question in questions %}
+							{% if question.group_id == 10 %}
+							<tr>
+								<td width="70%"><i>{{question.name|safe}}</i></td>
+								<td>
+									{% if question.id in [124,126] %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Не выполняется</option>
+                                        		<option value="0.25">Определено в док-тах, но не выполняется</option>
+												<option value="0.5">Определено в док-тах, выполняется частично</option>
+												<option value="0.75">Определено в док-тах, выполняется почти полностью</option>
+												<option value="1">Выполняется полностью</option>
+                                    		</select>
+                                		</div>
+                                    {% elif question.id in [120,122,131] %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Документ отсутствует</option>
+                                        		<option value="1">Документ в наличии</option>
+                                    		</select>
+                                		</div>
+                                    {% else %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Не выполняется</option>
+												<option value="0.5">Выполняется частично</option>
+												<option value="1">Выполняется полностью</option>
+                                    		</select>
+                                		</div>
+                                    {% endif %}
+                            	</td>
+							</tr>
+							{% endif %}
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header" id="headingEleven" style="background-color: #fde3e5">
+				<h5 class="mb-0">
+                <button class="btn shadow-none" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+					<h5>Требования к ЗИ при переводах</h5>
+                </button>
+                </h5>
+			</div>
+			<div id="collapseEleven" class="collapse" aria-labelledby="headingEleven" data-parent="#accordion">
+				<div class="p-3 ">
+					<table class="table table-hover table-bordered">
+						<thead class="thead-light">
+							<tr>
+								<th>Вопрос</th>
+								<th>Варианты ответа</th>
+							</tr>
+						</thead>
+						{% for question in questions %}
+							{% if question.group_id == 11 %}
+							<tr>
+								<td width="70%"><i>{{question.name|safe}}</i></td>
+								<td>
+									{% if question.id in [132,133,134,135,136,137] %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Не выполняется</option>
+                                        		<option value="0.25">Определено в док-тах, но не выполняется</option>
+												<option value="0.5">Определено в док-тах, выполняется частично</option>
+												<option value="0.75">Определено в док-тах, выполняется почти полностью</option>
+												<option value="1">Выполняется полностью</option>
+                                    		</select>
+                                		</div>
+                                    {% else %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Не выполняется</option>
+												<option value="0.5">Выполняется частично</option>
+												<option value="1">Выполняется полностью</option>
+                                    		</select>
+                                		</div>
+                                    {% endif %}
+                            	</td>
+							</tr>
+							{% endif %}
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header" id="headingTwelve">
+				<h5 class="mb-0">
+                <button class="btn shadow-none" data-toggle="collapse" data-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+					<h5>Оценка выполнения требований к ЗИ при переводах</h5>
+                </button>
+                </h5>
+			</div>
+			<div id="collapseTwelve" class="collapse" aria-labelledby="headingTwelve" data-parent="#accordion">
+				<div class="p-3 ">
+					<table class="table table-hover table-bordered">
+						<thead class="thead-light">
+							<tr>
+								<th>Вопрос</th>
+								<th>Варианты ответа</th>
+							</tr>
+						</thead>
+						{% for question in questions %}
+							{% if question.group_id == 12 %}
+							<tr>
+								<td width="70%"><i>{{question.name|safe}}</i></td>
+								<td>
+									<div class="form-group">
+										<select class="form-control" name="answer{{question.id}}">
+											<option value="-1" selected>Н/О</option>
+											<option value="0">Не выполняется</option>
+											<option value="0.5">Выполняется частично</option>
+											<option value="1">Выполняется полностью</option>
+										</select>
+									</div>
+                            	</td>
+							</tr>
+							{% endif %}
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header" id="headingThirteen" style="background-color: #fde3e5">
+				<h5 class="mb-0">
+                <button class="btn shadow-none" data-toggle="collapse" data-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+					<h5>Отчетность перед ОПС за ЗИ при переводах</h5>
+                </button>
+                </h5>
+			</div>
+			<div id="collapseThirteen" class="collapse" aria-labelledby="headingThirteen" data-parent="#accordion">
+				<div class="p-3 ">
+					<table class="table table-hover table-bordered">
+						<thead class="thead-light">
+							<tr>
+								<th>Вопрос</th>
+								<th>Варианты ответа</th>
+							</tr>
+						</thead>
+						{% for question in questions %}
+							{% if question.group_id == 13 %}
+							<tr>
+								<td width="70%"><i>{{question.name|safe}}</i></td>
+								<td>
+									{% if question.id in [139] %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Документ отсутствует</option>
+                                        		<option value="1">Документ в наличии</option>
+                                    		</select>
+                                		</div>
+                                    {% else %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Не выполняется</option>
+												<option value="0.5">Выполняется частично</option>
+												<option value="1">Выполняется полностью</option>
+                                    		</select>
+                                		</div>
+                                    {% endif %}
+                            	</td>
+							</tr>
+							{% endif %}
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header" id="headingFourteen">
+				<h5 class="mb-0">
+                <button class="btn shadow-none" data-toggle="collapse" data-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+					<h5>Совершенствование системы ЗИ при переводах</h5>
+                </button>
+                </h5>
+			</div>
+			<div id="collapseFourteen" class="collapse" aria-labelledby="headingFourteen" data-parent="#accordion">
+				<div class="p-3 ">
+					<table class="table table-hover table-bordered">
+						<thead class="thead-light">
+							<tr>
+								<th>Вопрос</th>
+								<th>Варианты ответа</th>
+							</tr>
+						</thead>
+						{% for question in questions %}
+							{% if question.group_id == 14 %}
+							<tr>
+								<td width="70%"><i>{{question.name|safe}}</i></td>
+								<td>
+									<div class="form-group">
+										<select class="form-control" name="answer{{question.id}}">
+											<option value="-1" selected>Н/О</option>
+											<option value="0">Не выполняется</option>
+											<option value="0.5">Выполняется частично</option>
+											<option value="1">Выполняется полностью</option>
+										</select>
+									</div>
+                            	</td>
+							</tr>
+							{% endif %}
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header" id="headingFifteen" style="background-color: #fde3e5">
+				<h5 class="mb-0">
+                <button class="btn shadow-none" data-toggle="collapse" data-target="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+					<h5>Защита информации банкоматов и терминалов, пластиковые карты</h5>
+                </button>
+                </h5>
+			</div>
+			<div id="collapseFifteen" class="collapse" aria-labelledby="headingFifteen" data-parent="#accordion">
+				<div class="p-3 ">
+					<table class="table table-hover table-bordered">
+						<thead class="thead-light">
+							<tr>
+								<th>Вопрос</th>
+								<th>Варианты ответа</th>
+							</tr>
+						</thead>
+						{% for question in questions %}
+							{% if question.group_id == 15 %}
+							<tr>
+								<td width="70%"><i>{{question.name|safe}}</i></td>
+								<td>
+									{% if question.id in [155,156,157,159,161,162,163,165] %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Не выполняется</option>
+                                        		<option value="0.25">Определено в док-тах, но не выполняется</option>
+												<option value="0.5">Определено в док-тах, выполняется частично</option>
+												<option value="0.75">Определено в док-тах, выполняется почти полностью</option>
+												<option value="1">Выполняется полностью</option>
+                                    		</select>
+                                		</div>
+                                    {% elif question.id in [158,166] %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Документ отсутствует</option>
+                                        		<option value="1">Документ в наличии</option>
+                                    		</select>
+                                		</div>
+                                    {% else %}
+										<div class="form-group">
+                                    		<select class="form-control" name="answer{{question.id}}">
+                                        		<option value="-1" selected>Н/О</option>
+                                        		<option value="0">Не выполняется</option>
+												<option value="0.5">Выполняется частично</option>
+												<option value="1">Выполняется полностью</option>
+                                    		</select>
+                                		</div>
+                                    {% endif %}
+                            	</td>
+							</tr>
+							{% endif %}
+						{% endfor %}
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12"></div>
+			<div class="col md-12">
+				<div class="p-3 float-right">
+					<input type="hidden" name="id" value="{{banks.id}}">
+					<button id="button_1" class="btn btn-danger">Провести оценку</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="p-5 bg-dark"></div>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$( document ).ready(function(){
+	  $( "#button_1" ).click(function(){
+	    $.ajax({
+        	type: "POST",
+        	url: "/answers_banks",
+        	data: {
+        		id: $('input[name="id"]').val(),
+            	answer1: $('select[name="answer1"]').val(),
+            	answer2: $('select[name="answer2"]').val(),
+            	answer3: $('select[name="answer3"]').val(),
+            	answer4: $('select[name="answer4"]').val(),
+            	answer5: $('select[name="answer5"]').val(),
+            	answer6: $('select[name="answer6"]').val(),
+            	answer7: $('select[name="answer7"]').val(),
+            	answer8: $('select[name="answer8"]').val(),
+            	answer9: $('select[name="answer9"]').val(),
+            	answer10: $('select[name="answer10"]').val(),
+            	answer11: $('select[name="answer11"]').val(),
+            	answer12: $('select[name="answer12"]').val(),
+            	answer13: $('select[name="answer13"]').val(),
+            	answer14: $('select[name="answer14"]').val(),
+            	answer15: $('select[name="answer15"]').val(),
+            	answer16: $('select[name="answer16"]').val(),
+            	answer17: $('select[name="answer17"]').val(),
+            	answer18: $('select[name="answer18"]').val(),
+            	answer19: $('select[name="answer19"]').val(),
+            	answer20: $('select[name="answer20"]').val(),
+            	answer21: $('select[name="answer21"]').val(),
+            	answer22: $('select[name="answer22"]').val(),
+            	answer23: $('select[name="answer23"]').val(),
+            	answer24: $('select[name="answer24"]').val(),
+            	answer25: $('select[name="answer25"]').val(),
+            	answer26: $('select[name="answer26"]').val(),
+            	answer27: $('select[name="answer27"]').val(),
+            	answer28: $('select[name="answer28"]').val(),
+            	answer29: $('select[name="answer29"]').val(),
+            	answer30: $('select[name="answer30"]').val(),
+            	answer31: $('select[name="answer31"]').val(),
+            	answer32: $('select[name="answer32"]').val(),
+            	answer33: $('select[name="answer33"]').val(),
+            	answer34: $('select[name="answer34"]').val(),
+            	answer35: $('select[name="answer35"]').val(),
+            	answer36: $('select[name="answer36"]').val(),
+            	answer37: $('select[name="answer37"]').val(),
+            	answer38: $('select[name="answer38"]').val(),
+            	answer39: $('select[name="answer39"]').val(),
+            	answer40: $('select[name="answer40"]').val(),
+            	answer41: $('select[name="answer41"]').val(),
+            	answer42: $('select[name="answer42"]').val(),
+            	answer43: $('select[name="answer43"]').val(),
+            	answer44: $('select[name="answer44"]').val(),
+            	answer45: $('select[name="answer45"]').val(),
+            	answer46: $('select[name="answer46"]').val(),
+            	answer47: $('select[name="answer47"]').val(),
+            	answer48: $('select[name="answer48"]').val(),
+            	answer49: $('select[name="answer49"]').val(),
+            	answer50: $('select[name="answer50"]').val(),
+            	answer51: $('select[name="answer51"]').val(),
+            	answer52: $('select[name="answer52"]').val(),
+            	answer53: $('select[name="answer53"]').val(),
+            	answer54: $('select[name="answer54"]').val(),
+            	answer55: $('select[name="answer55"]').val(),
+            	answer56: $('select[name="answer56"]').val(),
+            	answer57: $('select[name="answer57"]').val(),
+            	answer58: $('select[name="answer58"]').val(),
+            	answer59: $('select[name="answer59"]').val(),
+            	answer60: $('select[name="answer60"]').val(),
+            	answer61: $('select[name="answer61"]').val(),
+            	answer62: $('select[name="answer62"]').val(),
+            	answer63: $('select[name="answer63"]').val(),
+            	answer64: $('select[name="answer64"]').val(),
+            	answer65: $('select[name="answer65"]').val(),
+            	answer66: $('select[name="answer66"]').val(),
+            	answer67: $('select[name="answer67"]').val(),
+            	answer68: $('select[name="answer68"]').val(),
+            	answer69: $('select[name="answer69"]').val(),
+            	answer70: $('select[name="answer70"]').val(),
+            	answer71: $('select[name="answer71"]').val(),
+            	answer72: $('select[name="answer72"]').val(),
+            	answer73: $('select[name="answer73"]').val(),
+            	answer74: $('select[name="answer74"]').val(),
+            	answer75: $('select[name="answer75"]').val(),
+            	answer76: $('select[name="answer76"]').val(),
+            	answer77: $('select[name="answer77"]').val(),
+            	answer78: $('select[name="answer78"]').val(),
+            	answer79: $('select[name="answer79"]').val(),
+            	answer80: $('select[name="answer80"]').val(),
+            	answer81: $('select[name="answer81"]').val(),
+            	answer82: $('select[name="answer82"]').val(),
+            	answer83: $('select[name="answer83"]').val(),
+            	answer84: $('select[name="answer84"]').val(),
+            	answer85: $('select[name="answer85"]').val(),
+            	answer86: $('select[name="answer86"]').val(),
+            	answer87: $('select[name="answer87"]').val(),
+            	answer88: $('select[name="answer88"]').val(),
+            	answer89: $('select[name="answer89"]').val(),
+            	answer90: $('select[name="answer90"]').val(),
+            	answer91: $('select[name="answer91"]').val(),
+            	answer92: $('select[name="answer92"]').val(),
+            	answer93: $('select[name="answer93"]').val(),
+            	answer94: $('select[name="answer94"]').val(),
+            	answer95: $('select[name="answer95"]').val(),
+            	answer96: $('select[name="answer96"]').val(),
+            	answer97: $('select[name="answer97"]').val(),
+            	answer98: $('select[name="answer98"]').val(),
+            	answer99: $('select[name="answer99"]').val(),
+            	answer100: $('select[name="answer100"]').val(),
+            	answer101: $('select[name="answer101"]').val(),
+            	answer102: $('select[name="answer102"]').val(),
+            	answer103: $('select[name="answer103"]').val(),
+            	answer104: $('select[name="answer104"]').val(),
+            	answer105: $('select[name="answer105"]').val(),
+            	answer106: $('select[name="answer106"]').val(),
+            	answer107: $('select[name="answer107"]').val(),
+            	answer108: $('select[name="answer108"]').val(),
+            	answer109: $('select[name="answer109"]').val(),
+            	answer110: $('select[name="answer110"]').val(),
+            	answer111: $('select[name="answer111"]').val(),
+            	answer112: $('select[name="answer112"]').val(),
+            	answer113: $('select[name="answer113"]').val(),
+            	answer114: $('select[name="answer114"]').val(),
+            	answer115: $('select[name="answer115"]').val(),
+            	answer116: $('select[name="answer116"]').val(),
+            	answer117: $('select[name="answer117"]').val(),
+            	answer118: $('select[name="answer118"]').val(),
+            	answer119: $('select[name="answer119"]').val(),
+            	answer120: $('select[name="answer120"]').val(),
+            	answer121: $('select[name="answer121"]').val(),
+            	answer122: $('select[name="answer122"]').val(),
+            	answer123: $('select[name="answer123"]').val(),
+            	answer124: $('select[name="answer124"]').val(),
+            	answer125: $('select[name="answer125"]').val(),
+            	answer126: $('select[name="answer126"]').val(),
+            	answer127: $('select[name="answer127"]').val(),
+            	answer128: $('select[name="answer128"]').val(),
+            	answer129: $('select[name="answer129"]').val(),
+            	answer130: $('select[name="answer130"]').val(),
+            	answer131: $('select[name="answer131"]').val(),
+            	answer132: $('select[name="answer132"]').val(),
+            	answer133: $('select[name="answer133"]').val(),
+            	answer134: $('select[name="answer134"]').val(),
+            	answer135: $('select[name="answer135"]').val(),
+            	answer136: $('select[name="answer136"]').val(),
+            	answer137: $('select[name="answer137"]').val(),
+            	answer138: $('select[name="answer138"]').val(),
+            	answer139: $('select[name="answer139"]').val(),
+            	answer140: $('select[name="answer140"]').val(),
+            	answer141: $('select[name="answer141"]').val(),
+            	answer142: $('select[name="answer142"]').val(),
+            	answer143: $('select[name="answer143"]').val(),
+            	answer144: $('select[name="answer144"]').val(),
+            	answer145: $('select[name="answer145"]').val(),
+            	answer146: $('select[name="answer146"]').val(),
+            	answer147: $('select[name="answer147"]').val(),
+            	answer148: $('select[name="answer148"]').val(),
+            	answer149: $('select[name="answer149"]').val(),
+            	answer150: $('select[name="answer150"]').val(),
+            	answer151: $('select[name="answer151"]').val(),
+            	answer152: $('select[name="answer152"]').val(),
+            	answer153: $('select[name="answer153"]').val(),
+            	answer154: $('select[name="answer154"]').val(),
+            	answer155: $('select[name="answer155"]').val(),
+            	answer156: $('select[name="answer156"]').val(),
+            	answer157: $('select[name="answer157"]').val(),
+            	answer158: $('select[name="answer158"]').val(),
+            	answer159: $('select[name="answer159"]').val(),
+            	answer160: $('select[name="answer160"]').val(),
+            	answer161: $('select[name="answer161"]').val(),
+            	answer162: $('select[name="answer162"]').val(),
+            	answer163: $('select[name="answer163"]').val(),
+            	answer164: $('select[name="answer164"]').val(),
+            	answer165: $('select[name="answer165"]').val(),
+            	answer166: $('select[name="answer166"]').val(),
+            	answer167: $('select[name="answer167"]').val()
+        	},
+        	success: function(result) {
+            	alert(result);
+				window.location = "http://127.0.0.1:5000/"
+        	},
+        	error: function(result) {
+				alert('error');
+        	}
+    	});
+	  });
+	});
+</script>
+{% endblock %}

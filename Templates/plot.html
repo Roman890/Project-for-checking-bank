@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="p-3 bg-danger">
+    <div class="well text-center">
+        <h1 style="color: white">График результатов проведенной оценки информационной безопасности ДБО банка {{banks.name}}</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+            <div class="p-3 float-right">
+				<a href="/back" class="btn btn-danger">Вернуться на главную</a>
+			</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col md-12">
+            <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+            <div class="chart col md-12" id="bargraph">
+                <script>
+                    var graphs = {{plot | safe}};
+                    Plotly.plot('bargraph',graphs,{});
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+<nav class="navbar fixed-bottom navbar-light bg-dark p-5">
+
+{% endblock %}

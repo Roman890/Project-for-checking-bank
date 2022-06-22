@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="p-3 bg-danger">
+    <div class="well text-center">
+        <h1 style="color: white">Проведение оценки соответствия требованиям  ЦБ РФ по информационной безопасности для дистанционного банковского обслуживания (ДБО) банка</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+            <div class="p-3"> <button type="button" class="btn btn-danger float-right" data-toggle="modal"
+                    data-target="#mymodal">Добавить новый банк</button></div>
+            </br>
+            {% for bank, value1 in data.items() %}
+            <div class="p-3">
+                <table class="table">
+                    <tr>
+                        <td>
+                            <h2>Банк {{bank.name}}</h2>
+                            <a href="" class="btn btn-secondary btn-sm" data-toggle="modal"
+                                data-target="#edit{{bank.id}}">Изменить данные банка</a>
+                            <a href="/delete/{{bank.id}}" class="btn btn-secondary btn-sm"
+                                onclick="return confirm('Вы действительно хотите удалить банк?')">Удалить данные о банке</a>
+                            <a href="/plot/{{bank.id}}" class="btn btn-secondary btn-sm">График результатов проведения оценок</a>
+                        </td>
+                        <td width="30%">
+                            <a href="/tests/{{bank.id}}" class="btn btn-danger btn-lg
+                                btn-block">Провести оценку</a>
+                        </td>
+                    </tr>
+                    {% for test, value2 in value1.items() %}
+                    <tr>
+                        <td>
+                        <b> Дата проверки: {{test}}</b>
+                            <div class="p-1">
+                                <span>Оценка проведена и получено заключение:<br>{{value2|safe}}</span>
+                            </div>
+                        </td>
+                        <td width="30%">
+                            <a href="/recomendations/{{bank.id}}/{{test}}" class="btn btn-outline-danger btn-sm btn-block">Рекомендации</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <!-- Изменить данные банка-->
+            <div id="edit{{bank.id}}" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Изменить данные банка</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form action="{{url_for('update')}}" method="POST">
+                                <div class="form-group">
+                                    <label>Название банка</label>
+                                    <input type="hidden" name="id" value="{{bank.id}}">
+                                    <input type="text" class="form-control" name="name" value="{{bank.name}}">
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-danger btn-block" type="submit">Сохранить</button>
+                                    <button type="button" class="btn btn-secondary btn-block"
+                                            data-dismiss="modal">Отменить</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- Создать бота-->
+            <div id="mymodal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Добавить новый банк</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form action="{{url_for('insert')}}" method="POST">
+                                <div class="form-group">
+                                    <label>Название банка</label>
+                                    <input type="text" class="form-control" name="name" required="1">
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-danger btn-block" type="submit">Сохранить</button>
+                                    <button type="button" class="btn btn-secondary btn-block"
+                                        data-dismiss="modal">Отменить</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
